@@ -71,10 +71,7 @@ static cv::Point getRandomPosition(int width, int height, int squareLength)
 //이벤트 랜덤 실행
 static cv::Mat getRandomEvent(cv::Mat src)
 {
-	//int EventNumber = rand() % 8;
-	//int EventNumber = 0; //테스트용
-	static int EventNumber = 0; //테스트용
-	EventNumber = EventNumber %7 + 1;
+	int EventNumber = rand() % 8;
 
 	//체크용 변수들
 	static bool isCircleMode = false; //원형 체크
