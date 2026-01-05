@@ -19,8 +19,8 @@ struct Square {
 	}
 };
 
-//원 생성
-static cv::Mat getCircle(cv::Mat dst)
+//축 변환 리셋
+static cv::Mat resetAffineTransform(cv::Mat dst)
 {
 	cv::Point2f center(dst.cols / 2.0f, dst.rows / 2.0f);
 	cv::Mat M = cv::getRotationMatrix2D(center, 0, 1.0); //뒤틀린 축 원래대로 변환
@@ -173,7 +173,7 @@ static cv::Mat getRandomEvent(cv::Mat src)
 
 	//최종 형태 깎기
 	if (isCircleMode) {
-		next_dst = getCircle(next_dst);
+		next_dst = resetAffineTransform(next_dst);
 		cv::Mat clean = cv::Mat::zeros(next_dst.size(), next_dst.type());
 		next_dst.copyTo(clean, getCircleMask(next_dst.size()));
 		next_dst = clean;
