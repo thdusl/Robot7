@@ -171,7 +171,7 @@ static cv::Mat getRandomEvent(cv::Mat src)
 			cv::INTER_CUBIC, cv::BORDER_CONSTANT, cv::Scalar(0));
 	}
 
-	//최종 형태 깎기
+	//최종 원형 깎기
 	if (isCircleMode) {
 		next_dst = resetAffineTransform(next_dst);
 		cv::Mat clean = cv::Mat::zeros(next_dst.size(), next_dst.type());
