@@ -276,8 +276,8 @@ void miniProject() CV_NOEXCEPT
 				dstH = dst_img.rows;
 
 				//gameRect 새로고침
-				int x = cv::max(0, cv::min(squareImg.position.x - dstW / 2, width - dstW));
-				int y = cv::max(0, cv::min(squareImg.position.y - dstH / 2, height - dstH));
+				x = cv::max(0, cv::min(squareImg.position.x - dstW / 2, width - dstW));
+				y = cv::max(0, cv::min(squareImg.position.y - dstH / 2, height - dstH));
 				gameRect = cv::Rect(x, y, dstW, dstH);
 			}
 
