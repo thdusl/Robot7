@@ -10,11 +10,11 @@ if not os.path.exists(folder_name): #exists는 폴더나 파일이 있는지 체
     os.mkdir(folder_name)
 
 def draw_korean_text(img, text, font_size, color, y_offset=0):
-    # 1. OpenCV 이미지(Numpy)를 PIL 이미지로 변환
+    # OpenCV 이미지(Numpy)를 PIL 이미지로 변환
     img_pil = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-    # 2. 한글 폰트 설정 (윈도우 기본 맑은 고딕 사용)
+    # 한글 폰트 설정 (윈도우 기본 맑은 고딕)
     font = ImageFont.truetype("malgun.ttf", font_size)
-    # 3. 그리기 객체 생성 및 글씨 쓰기
+    # 그리기 객체 생성 및 글씨 쓰기
     draw = ImageDraw.Draw(img_pil)
 
     # 글자 영역 계산 (left, top, right, botton)
@@ -28,7 +28,7 @@ def draw_korean_text(img, text, font_size, color, y_offset=0):
     y = (h - text_h) // 2 + y_offset
 
     draw.text((x,y), text, font=font, fill=color)
-    # 4. 다시 OpenCV 이미지(Numpy)로 되돌리기
+    # PIL이미지를 다시 OpenCV 이미지(Numpy)로 되돌리기
     return cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
 
 
@@ -37,7 +37,7 @@ if not cap.isOpened():
     print("웹캡은 열 수 없습니다.")
     exit()
 
-#학습시킨 값 불러오기
+#학습시킨 모델 불러오기
 load_model = keras.models.load_model("my_second_DNN_model.keras")
 
 IMG_PASSWORD = ['3','3','2','1']
@@ -121,7 +121,7 @@ while True:
         resize_img = cv2.resize(reversed_img, (28, 28))
         # 가장자리 검게 색칠
         resize_img[0:3, :] = 0   # 상단
-        resize_img[-3:, :] = 0  # 하단
+        resize_img[-3:, :] = 0   # 하단
         resize_img[:, 0:3] = 0   # 좌측
         resize_img[:, -3:] = 0   # 우측
         cv2.imshow("resize_img", resize_img)  #체크용
