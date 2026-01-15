@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from tensorflow import keras # 학습모델 불러오기
+from tensorflow import keras # 학습모델 불러오는 용
 from PIL import ImageFont, ImageDraw, Image #한글 글자 출력용
 import time #시간 제어용
 import os #폴더 생성용
