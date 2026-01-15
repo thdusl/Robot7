@@ -54,7 +54,6 @@ isSuccessPassword = False #패스워드 성공 유무
 isWaitingAnswer = False # 정답 수정 유무
 isWaitingConfirm = False # Y/N 최종 확인 유무
 input_num = "" #임시 저장 숫자
-ans_num = "" #정답 숫자
 
 while True:
     ret, frame = cap.read() # 리턴값과 프레임
