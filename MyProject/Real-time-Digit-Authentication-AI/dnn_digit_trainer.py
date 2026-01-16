@@ -29,10 +29,10 @@ if extra_images:
     extra_labels = np.concatenate([train_labels, np.array(extra_labels * 10)])
 
 #정규화 작업
-(train_images, test_images) = (train_images / 255, test_images / 255)
+(extra_images, test_images) = (extra_images / 255, test_images / 255)
 
 #모델 소환
 model = keras.models.load_model("my_second_DNN_model.keras")
 
 # 훈련
-model.fit(train_images, train_labels, epochs=5)
+model.fit(extra_images, extra_labels, epochs=10)
