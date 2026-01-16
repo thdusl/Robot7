@@ -35,4 +35,4 @@ if extra_images:
 model = keras.models.load_model("my_second_DNN_model.keras")
 
 # 훈련
-model.fit(extra_images, extra_labels, epochs=10)
+model.fit(extra_images, extra_labels, epochs=5)
