@@ -50,7 +50,6 @@ class MainWindow(QMainWindow):
     self.ui.btn_stop.clicked.connect(self.btn_stop_clicked)
     self.ui.btn_home.clicked.connect(self.btn_home_clicked)
     self.ui.auto_check.stateChanged.connect(self.auto_mode_checked)
-    # self.ui.auto_check.clicked.connect(self.btn_stop_clicked) # 버튼 클릭하면 정지
 
     rclpy.init()
     self.executor = MultiThreadedExecutor()

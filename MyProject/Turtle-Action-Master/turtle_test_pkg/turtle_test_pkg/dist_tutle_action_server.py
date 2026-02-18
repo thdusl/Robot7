@@ -119,11 +119,6 @@ class DistTurtleServer(Node):
 
       self.publisher.publish(msg) # 최종 명령 전송
 
-      # 좌표 정보 보내기
-      pose_msg = String()
-      pose_msg.data = f"x={self.current_pose.x:.2f}, y={self.current_pose.y:.2f}"
-      self.pose_pub.publish(pose_msg)
-
       time.sleep(0.05)
 
     self.get_logger().info('Success: Arrived at Home!')
