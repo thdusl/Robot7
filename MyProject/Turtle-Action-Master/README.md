@@ -1,4 +1,4 @@
-## 📋 주요 기능 및 설계 명세 (미완)
+## 주요 기능 및 설계 명세 (미완)
 
 <table>
   <thead>
@@ -13,18 +13,15 @@
   <tbody>
     <tr>
       <td rowspan="2"><b>수동 제어</b></td>
-      <td>이동 버튼</td>
+      <td>이동 버튼(수동모드)</td>
+      <td>
+        방향버튼 클릭 시 선속도/각속도를 누적하여 전송<br>
+        <code>manual mode: x=0.00, z=0.00</code>
+      </td>
       <td>stop_all_control 호출로 제어권 회수</td>
       <td>-</td>
-      <td>-</td>
     </tr>
-    <tr>
-      <td>정지 버튼</td>
-      <td>Stop command 및 누적거리 출력</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-    <tr>
+    <tr> `--------------------`
       <td rowspan="2"><b>자동 제어</b></td>
       <td>오토 모드</td>
       <td>원형 주행 반복 로그 출력</td>
