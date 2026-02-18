@@ -24,7 +24,6 @@
       <td>-</td>
       <td>-</td>
     </tr>
-    
     <tr>
       <td rowspan="2"><b>자동 제어</b></td>
       <td>오토 모드</td>
