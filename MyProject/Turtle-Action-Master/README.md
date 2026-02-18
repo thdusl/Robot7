@@ -16,6 +16,7 @@
       <td>이동 버튼</td>
       <td>stop_all_control 호출로 제어권 회수</td>
       <td>-</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>정지 버튼</td>
@@ -29,6 +30,7 @@
       <td>오토 모드</td>
       <td>원형 주행 반복 로그 출력</td>
       <td>활성화 시 타 모드 즉시 해제</td>
+      <td>-</td>
     </tr>
     <tr>
       <td>홈 귀환</td>
