@@ -20,8 +20,8 @@
     <tr>
       <td>정지 버튼</td>
       <td>Stop command 및 누적거리 출력</td>
-      <td></td>
-      <td></td>
+      <td>-</td>
+      <td>-</td>
     </tr>
     
     <tr>
@@ -34,7 +34,7 @@
       <td>홈 귀환</td>
       <td>3m 주기 피드백 및 도착 확인</td>
       <td>서버 미연결 시 예외 알림</td>
-      <td></td>
+      <td>-</td>
     </tr>
   </tbody>
 </table>
