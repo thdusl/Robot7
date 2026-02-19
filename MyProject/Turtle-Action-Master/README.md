@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th width="100px">분류</th>
-      <th width="120px">기능명</th>
+      <th width="140px">기능명</th>
       <th>동작 및 로그</th>
       <th>안전 설계</th>
       <th>예외 처리</th>
