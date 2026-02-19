@@ -57,7 +57,8 @@
         ● 3m 주기 피드백 로그 출력<br>
         <code>[EVENT_HOME] Returning to Home...</code><br>
         <code>Distance remaining: 0.00m</code><br>
-        ● 원점 도착 시 멈춰있던 수동모드 로그 출력
+        ● 원점 도착 시 도착 로그 출력 및 멈춰있던 수동모드 로그 출력<br>
+        <code>[EVENT_HOME] Arrived at Home!</code>
       </td>
       <td>주행중 중단 명령 시 cancel_goal_async를 실행하고 goal_handle을 초기화하여 리소스 정리</td>
       <td>
@@ -105,4 +106,3 @@
   </tbody>
 </table>
 
-  ```
