@@ -46,9 +46,9 @@
       </td>
       <td>주행중 중단 명령 시 cancel_goal_async를 실행하고 goal_handle을 초기화하여 리소스 정리</td>
       <td>
-        서버 미연결 시 예외 알림<br>
+        ● 서버 미연결 시 예외 알림<br>
         <code>Error: not action_server</code><br>
-        서버 명령 거절 시 예외 알림<br>
+        ● 서버 명령 거절 시 예외 알림<br>
         <code>[EVENT_HOME] Goal Rejected</code>
       </td>
     </tr>
