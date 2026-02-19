@@ -17,7 +17,7 @@ from rclpy.node import Node
 from rclpy.action import ActionClient
 from my_first_package_msgs.action import DistTurtle
 from std_srvs.srv import Trigger
-
+import math
 
 class RclpyThread(QThread):
   odom_signal = Signal(str)
@@ -138,11 +138,24 @@ class MainWindow(QMainWindow):
       self.rclpy_thread.msg_signal.emit("[EVENT_HOME] Goal Rejected")
       return
     self.rclpy_thread.msg_signal.emit("[EVENT_HOME] Returning to Home...")
+    # 도착 시 결과 알림
+    self.goal_handle.get_result_async().add_done_callback(self.get_result_callback)
+
+  # 홈(원점) 도착
+  def get_result_callback(self, future):
+    result = future.result().result
+    final_dist = math.sqrt(result.pos_x**2 + result.pos_y**2)
+
+    if final_dist < 0.2:
+      self.rclpy_thread.msg_signal.emit("[EVENT_HOME] Arrived at Home!")
+    else:
+      self.rclpy_thread.msg_signal.emit("[EVENT_HOME] Home Return Aborted.")
+
+    self.goal_handle = None
 
   def action_feedback(self, feedback_msg):
     remained = feedback_msg.feedback.remained_dist
     self.rclpy_thread.msg_signal.emit(f"Distance remaining: {remained:.2f}m")
-
 
   ### 버튼 이벤트용 함수 모음 ###
   def btn_home_clicked(self):
@@ -168,7 +181,6 @@ class MainWindow(QMainWindow):
       if hasattr(self, 'goal_handle') and self.goal_handle is not None:
         self.goal_handle.cancel_goal_async()
         self.goal_handle = None # 초기화
-        self.rclpy_thread.msg_signal.emit("[EVENT_HOME] Home Return Aborted!")
       self.velocity = 1.0
     else:
       self.velocity = 0.0
@@ -197,7 +209,7 @@ class MainWindow(QMainWindow):
     self.pub_move.move_turtle.publish(stop_msg)
     self.rclpy_thread.msg_signal.emit("[EVENT_STOP] Stop command sent.")
 
-    # 누적 거리 서비스 호출 액션 ---  관련 공부하기
+    # 누적 거리 서비스 호출 액션
     if self.dist_client.wait_for_service(timeout_sec=1.0):
       req = Trigger.Request()
       # 비동기 호출 후 대답이 오면 get_dist_callback 함수 실행 예약
@@ -229,8 +241,6 @@ class MainWindow(QMainWindow):
     if hasattr(self, 'goal_handle') and self.goal_handle is not None:
       self.goal_handle.cancel_goal_async()
       self.goal_handle = None # 초기화
-      self.rclpy_thread.msg_signal.emit("[EVENT_HOME] Home Return Aborted!")
-
 
   ### ui 스크롤 관련 함수 ###
   def smart_scroll(self, text, list_widget):
