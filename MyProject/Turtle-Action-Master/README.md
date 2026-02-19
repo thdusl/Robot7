@@ -45,7 +45,6 @@
       </td>
       <td>
         ● 체크박스 활성화 시 귀환 설정이 활성화 되어있다면 즉각 해제<br>
-        <code>[EVENT_HOME] Home Return Aborted!</code><br>
         ● 체크박스 해제 시 모든 속도를 0.00으로 초기화하고 물리적 정지 명령 전송
       </td>
       <td>오토모드 중 새로운 액션(수동제어, 원점 귀환) 유입시 체크박스 강제 해제</td>
@@ -57,10 +56,14 @@
         ● 3m 주기 피드백 로그 출력<br>
         <code>[EVENT_HOME] Returning to Home...</code><br>
         <code>Distance remaining: 0.00m</code><br>
-        ● 원점 도착 시 도착 로그 출력 및 멈춰있던 수동모드 로그 출력<br>
-        <code>[EVENT_HOME] Arrived at Home!</code>
+        ● 종료 콜백을 통한 상태별 로그 출력<br>
+        원점기준 0.2m 이내 도착: <code>[EVENT_HOME] Arrived at Home!</code><br>
+        그 외 모든 중단/취소 시: <code>[EVENT_HOME] Home Return Aborted.</code>
       </td>
-      <td>주행중 중단 명령 시 cancel_goal_async를 실행하고 goal_handle을 초기화하여 리소스 정리</td>
+      <td>
+        ● 원점 귀환 중 중단 명령 시 cancel_goal_async를 실행하고 goal_handle을 초기화하여 리소스 정리<br>
+        ● 원점 귀환 중 새로운 액션(수동모드, 오토모드) 유입 시 기존 귀환 액션 취소 및 로그 출력<br>
+      </td>
       <td>
         ● 서버 미연결 시 예외 알림<br>
         <code>Error: not action_server</code><br>
