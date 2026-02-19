@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th width="80px">분류</th>
+      <th width="90px">분류</th>
       <th width="100px">기능명</th>
       <th>동작 및 로그</th>
       <th>안전 설계</th>
