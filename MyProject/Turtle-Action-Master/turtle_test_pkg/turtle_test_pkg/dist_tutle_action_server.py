@@ -8,7 +8,6 @@ from std_msgs.msg import String
 from my_first_package_msgs.action import DistTurtle
 from turtle_test_pkg.my_subscriber import TurtlebotSubscriber
 
-
 from rcl_interfaces.msg import SetParametersResult
 
 import math
@@ -115,14 +114,12 @@ class DistTurtleServer(Node):
 
       if dist_to_home < 0.2:  # 도착 범위
         self.publisher.publish(stop_msg)
+        self.get_logger().info('Success: Arrived at Home!')
         break
 
       self.publisher.publish(msg) # 최종 명령 전송
 
       time.sleep(0.05)
-
-    self.get_logger().info('Success: Arrived at Home!')
-    goal_handle.succeed()
 
     result = DistTurtle.Result()
 
@@ -130,6 +127,8 @@ class DistTurtleServer(Node):
     result.pos_y = self.current_pose.y
     result.pos_theta = self.current_theta
     result.result_dist = self.total_dist
+
+    goal_handle.succeed()
 
     # 액션을 위한 상태 초기화
     self.total_dist = 0
