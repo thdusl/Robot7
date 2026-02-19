@@ -1,3 +1,18 @@
+## 실행
+- (방법1) 런치파일로 실행
+  ```
+  ros2 launch turtle_test_pkg turtlebot_and_test.launch.py
+  ```
+- (방법2) 각 코드별 실행
+  ```
+  ros2 launch turtlebot3_gazebo empty_world.launch.py
+  ```
+  ```
+  ros2 run turtle_test_pkg turtle_test_pub
+  ```
+  ```
+  ros2 run turtle_test_pkg dist_tutle_action_server
+  
 ## 주요 기능 및 설계 명세
 <table>
   <thead>
@@ -90,18 +105,4 @@
   </tbody>
 </table>
 
-## 실행
-- (방법1) 런치파일로 실행
-  ```
-  ros2 launch turtle_test_pkg turtlebot_and_test.launch.py
-  ```
-- (방법2) 각 코드별 실행
-  ```
-  ros2 launch turtlebot3_gazebo empty_world.launch.py
-  ```
-  ```
-  ros2 run turtle_test_pkg turtle_test_pub
-  ```
-  ```
-  ros2 run turtle_test_pkg dist_tutle_action_server
   ```
