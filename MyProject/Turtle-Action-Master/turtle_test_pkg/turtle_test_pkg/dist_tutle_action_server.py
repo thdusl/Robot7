@@ -79,10 +79,15 @@ class DistTurtleServer(Node):
     while True:
       # 중단 요청 체크
       if goal_handle.is_cancel_requested:
+        result = DistTurtle.Result()
+        result.pos_x = self.current_pose.x
+        result.pos_y = self.current_pose.y
+        result.result_dist = self.total_dist
+
         self.publisher.publish(stop_msg)
         goal_handle.canceled()
         self.get_logger().info("Action Canceled and Robot Stopped")
-        return DistTurtle.Result()
+        return result
 
       # 목표까지 거리 계산
       dist_to_home = math.sqrt(self.current_pose.x**2 + self.current_pose.y**2)
