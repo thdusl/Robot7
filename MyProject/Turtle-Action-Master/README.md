@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     <tr>
-      <td><b>수동 제어</b></td>
+      <td><b>수동<br>제어</b></td>
       <td>4방향 이동 버튼(수동모드)</td>
       <td>
         방향버튼 클릭 시 선속도/각속도를 누적하여 전송<br>
@@ -22,7 +22,7 @@
       <td>-</td>
     </tr>
     <tr>
-      <td rowspan="2"><b>자동 제어</b></td>
+      <td rowspan="2"><b>자동<br>제어</b></td>
       <td>auto 체크박스(오토모드)</td>
       <td>
         -체크박스 활성화 시 회오리 궤적을 그리며 무한 주행<br>
@@ -52,7 +52,7 @@
       </td>
     </tr>
     <tr>
-      <td rowspan="2"><b>시스템 관리</b></td>
+      <td rowspan="2"><b>시스템<br>관리</b></td>
       <td>통합 제어권 회수</td>
       <td>stop_all_control를 사용하여, 새로운 명령(수동모드/오토모드/원점귀환) 발생 시 기존에 발생한 액션(오토모드/원점귀환)을 중단 </td>
       <td></td>
@@ -70,7 +70,7 @@
     </tr>
     <tr>
       <td rowspan="2"><b>UI/UX</b></td>
-      <td>상태태그 시스템</td>
+      <td>상태태그시스템</td>
       <td>
         로그의 성격에 따라 [EVENT_HOME], [SERVER] 등 접두어를 부여하여 정보의 가독성 상승<br>
         예) <code>[SERVER]Pose: x=0.00, y=0.00</code>
