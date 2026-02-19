@@ -13,7 +13,7 @@
   <tbody>
     <tr>
       <td align="center" valign="middle"><b>수동 제어</b></td>
-      <td>4방향 이동 버튼(수동모드)</td>
+      <td>4방향 이동 버튼<br>(수동모드)</td>
       <td>
         방향버튼 클릭 시 선속도/각속도를 누적하여 전송<br>
         <code>manual mode: x=0.00, z=0.00</code>
@@ -23,7 +23,7 @@
     </tr>
     <tr>
       <td rowspan="2" align="center" valign="middle"><b>자동 제어</b></td>
-      <td>auto 체크박스(오토모드)</td>
+      <td>auto 체크박스<br>(오토모드)</td>
       <td>
         -체크박스 활성화 시 회오리 궤적을 그리며 무한 주행<br>
         -1초 주기 로그 출력<br>
@@ -37,7 +37,7 @@
       <td>오토모드 중 새로운 액션(수동제어, 원점 귀환) 유입시 체크박스 강제 해제</td>
     </tr>
     <tr>
-      <td>HOME 버튼(원점귀환)</td>
+      <td>HOME 버튼<br>(원점귀환)</td>
       <td>
         -action_server를 통해 현재 위치에서 (0,0)좌표로 자동주행<br>
         -3m 주기 피드백 로그 출력<br>
@@ -61,7 +61,7 @@
       <td></td>
     </tr>
     <tr>
-      <td>누적거리 측정(STOP 버튼)</td>
+      <td>누적거리 측정<br>(STOP 버튼)</td>
       <td>
         -STOP 버튼 클릭 시 물리적 정리 및 전체 주행 거리를 계산<br>
         <code>[EVENT_STOP] Stop command sent.</code>        
