@@ -1,4 +1,4 @@
-## 주요 기능 및 설계 명세 (미완)
+## 주요 기능 및 설계 명세
 
 <table>
   <thead>
@@ -40,7 +40,7 @@
       <td>HOME 버튼(원점귀환)</td>
       <td>
         -action_server를 통해 현재 위치에서 (0,0)좌표로 자동주행<br>
-        -3m 주기 피드백 로그 출력
+        -3m 주기 피드백 로그 출력<br>
         <code>[EVENT_HOME] Returning to Home...</code><br>
         <code>Distance remaining: 0.00m</code><br>
         -원점 도착 시 멈춰있던 수동모드 로그 출력
@@ -61,11 +61,31 @@
     <tr>
       <td>누적거리 측정(STOP 버튼)</td>
       <td>
-        -STOP 버튼 클릭 시 서비스를 호출하여 전체 주행 거리를 계산<br>
+        -STOP 버튼 클릭 시 물리적 정리 및 전체 주행 거리를 계산<br>
+        <code>[EVENT_STOP] Stop command sent.</code>        
         <code>Final Distance:0.00m</code> <br>
-        -STOP 버튼 클릭 시 모든 속도를 0.0으로 초기화하고 물리적 정지 명령 전송<br>
-        <code>[EVENT_STOP] Stop command sent.</code>
       </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><b>UI/UX</b></td>
+      <td>상태태그 시스템</td>
+      <td>
+        로그의 성격에 따라 [EVENT_HOME], [SERVER] 등 접두어를 부여하여 정보의 가독성 상승<br>
+        예) <code>[SERVER]Pose: x=0.00, y=0.00</code>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>멀티 채널 출력</td>
+      <td>
+        데이터의 속성에 따라 좌표리스트(pose), 이벤트로그(event), 누적거리(total_dist) 출력 위치를 분리
+        
+      </td>
+      <td>로그 발생 시 자동으로 최하단으로 스크롤, 상단에 올리면 자동 스크롤 정지</td>
+      <td></td>
     </tr>
   </tbody>
 </table>
