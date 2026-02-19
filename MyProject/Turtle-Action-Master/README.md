@@ -12,7 +12,7 @@
   ```
   ```
   ros2 run turtle_test_pkg dist_tutle_action_server
-  
+  ```
 ## 주요 기능 및 설계 명세
 <table>
   <thead>
