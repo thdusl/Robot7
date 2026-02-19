@@ -1,5 +1,4 @@
 ## 주요 기능 및 설계 명세
-
 <table>
   <thead>
     <tr>
@@ -90,3 +89,19 @@
     </tr>
   </tbody>
 </table>
+
+## 실행
+- 런치파일로 실행
+  ```
+  ros2 launch turtle_test_pkg turtlebot_and_test.launch.py
+  ```
+- 각 코드별 실행
+  ```
+  ros2 launch turtlebot3_gazebo empty_world.launch.py
+  ```
+  ```
+  ros2 run turtle_test_pkg turtle_test_pkg
+  ```
+  ```
+  ros2 run turtle_test_pkg dist_tutle_action_server
+  ```
